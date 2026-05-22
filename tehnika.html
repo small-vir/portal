@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Космическая техника</title>
+</head>
+<body>
+    <style>
+        /* Фон всего сайта */
+        body {
+            background-color: #C3CBD8;
+            margin: 0;
+            font-family: 'Segoe UI', 'Inter', 'Roboto', system-ui, sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+
+        .header-texnika {
+            height: 150px;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .header-max-texnika {
+            max-width: 1440px;
+            width: 100%;
+            display: flex;
+        }
+        .header-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .header-background-texnika {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gif-placeholder-texnika {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        .header-logo-container-texnika img {
+            width: 200px;
+            height: 120px;
+            margin-left: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+
+        .header-icons-texnika {
+            display: flex;
+            align-items: center;
+            margin-left: 1000px;
+        }
+
+        .home-placeholder-texnika  img {
+            width: 50px;
+            height: 50px;
+            margin-right: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .burger-placeholder-texnika img {
+            width: 55px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .burger-menu-texnika {
+            display: none;
+            position: fixed;
+            top: 40px;
+            margin-left: 1000px;
+            max-width: 1440px;
+            width: 400px;
+            height: 300px;
+            background-color: #C3CBD8;
+            z-index: 1000;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-top: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            border: 3px solid #162E4D;
+        }
+
+        .burger-menu-texnika.open-texnika {
+            display: flex;
+        }
+
+        .close-icon-container-texnika {
+            width: 50px;
+            height: 50px;
+            margin-top: -23px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .close-icon-placeholder-texnika {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+        }
+
+        .burger-menu-texnika ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            text-align: right;
+        }
+
+        .burger-menu-texnika li {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #162E4D;
+            font-size: 32px;
+            color: #03122F;
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        .burger-menu-texnika li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .burger-menu-texnika a {
+            text-decoration: none;
+            color: #03122F;
+        }
+
+
+
+
+
+
+
+
+        /* ========== СЕКЦИЯ: КОСМИЧЕСКАЯ ТЕХНИКА ========== */
+        .section-divider-texnika h1 {
+            font-size: 64px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .section-divider-texnika {
+            width: 100%;
+            height: 110px;
+            background-color: #162e4d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        .cards-container-texnika {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(280px, 555px));
+            justify-content: center;
+            gap: 100px 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 100px;
+            padding: 20px 15px 50px 15px;
+        }
+
+        .card-texnika {
+            width: 100%;
+            max-width: 555px;
+            aspect-ratio: 1 / 1;
+            background: #eeeff3;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.25s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 0 70px 0 #162e4d;
+        }
+
+        .card-texnika:hover {
+            transform: translateY(-6px);
+        }
+
+        .card-texnika img {
+            width: auto;
+            height: auto;
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            transition: transform 0.2s;
+        }
+
+        .card-texnika:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Модальное окно техники */
+        .modal-texnika {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(172, 183, 201, 0.7);
+        }
+
+        .modal-content-texnika {
+            position: relative;
+            background-color: #eeeff3;
+            margin: auto;
+            padding: 20px;
+            border-radius: 16px;
+            width: 1300px;
+            height: 800px;
+            box-shadow: 0 0 70px 0 #162e4d;
+            top: 50px;
+        }
+
+        .modal-content-texnika .texnika-image {
+            width: auto;
+            height: auto;
+            max-width: 500px;
+            max-height: 400px;
+            position: absolute;
+            left: 100px;
+            top: 60px;
+            object-fit: contain;
+        }
+
+        .modal-content-texnika .texnika-info {
+            position: absolute;
+            top: 60px;
+            right: 50px;
+            width: calc(100% - 70px - 500px - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .modal-content-texnika .texnika-info h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-left: 0;
+            color: #000000;
+        }
+
+        .modal-content-texnika .texnika-info h3 {
+            font-size: 28px;
+            margin-left: 0;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .modal-content-texnika .characteristics-list-texnika {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #000000;
+            margin-top: 0;
+            padding-left: 20px;
+        }
+
+        .modal-content-texnika .text-section-texnika {
+            position: absolute;
+            bottom: 50px;
+            left: 70px;
+            right: 50px;
+            height: auto;
+            max-height: 280px;
+            padding: 30px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            font-size: 20px;
+            color: #000000;
+            background: transparent;
+            top: auto;
+            overflow-y: auto;
+        }
+
+        .modal-content-texnika .close-button-texnika {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 42px;
+            font-weight: bold;
+            color: #051332;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+
+
+
+
+        /* ========== АДАПТИВНОСТЬ ========== */
+        @media (max-width: 768px) {
+            .section-divider-texnika h1 {
+                font-size: 40px;
+            }
+            .cards-container-texnika {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            .card-texnika {
+                box-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 0 0 5px #162e4d;
+            }
+            .modal-content-texnika {
+                width: 95%;
+                height: auto;
+                min-height: 600px;
+                padding: 15px;
+                top: 20px;
+            }
+            .modal-content-texnika .texnika-image {
+                position: static;
+                margin: 0 auto 20px;
+                max-width: 80%;
+                max-height: 250px;
+                display: block;
+            }
+            .texnika-info {
+                position: static;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .texnika-info h2, .texnika-info h3 {
+                margin-left: 0;
+                font-size: 28px;
+            }
+            .characteristics-list-texnika {
+                font-size: 16px;
+                text-align: left;
+            }
+            .modal-content-texnika .text-section-texnika {
+                position: static;
+                width: 100%;
+                height: auto;
+                max-height: 250px;
+                padding: 20px;
+                margin-top: 20px;
+            }
+            .close-button-texnika {
+                font-size: 32px;
+                top: 10px;
+                right: 15px;
+            }
+        }
+
+
+
+
+        .footer {
+            background-color: #051332;
+            width: 100%;
+            min-height: 350px;
+            display: flex;
+            justify-content: center;
+            margin-top: auto;
+        }
+
+        .footer-inner {
+            max-width: 1440px;
+            width: 100%;
+            display: flex;
+            color: #ffffff;
+            padding-bottom: 50px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            width: 246px;
+            height: 150px;
+            margin-top: 30px;
+            margin-left: 50px;
+            flex-shrink: 0;
+        }
+
+        .footer-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .footer-text-container {
+            width: 420px;
+            margin-top: 65px;
+            margin-left: 30px;
+            font-size: 32px;
+            line-height: 1.4;
+            flex-shrink: 0;
+        }
+
+        .footer-nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 80px;
+            margin-left: 80px;
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .footer-nav-list li {
+            margin-bottom: 35px;
+            transition: transform 0.2s ease;
+        }
+
+        .footer-nav-list a {
+            color: #ffffff;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .footer-nav-list li:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        .footer-nav-list a:active {
+            color: #aaaaaa;  /* Тёмно-серый цвет в момент нажатия */
+        }
+
+        .footer-nav-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-social-icons {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 48px;
+            margin-left: auto;
+            margin-right: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .footer-social-icons li {
+            margin-bottom: 15px;
+        }
+
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #051332;
+            transition: transform 0.2s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        .social-icon:active {
+            opacity: 0.6;           /* Делаем иконку полупрозрачной (тёмный эффект) */
+            transform: scale(0.95); /* Лёгкое уменьшение для эффекта нажатия */
+        }
+
+        @media (max-width: 1200px) {
+            .cards-container-texnika {
+                gap: 100px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .cards-container-texnika {
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-text-container {
+                margin-left: 0;
+            }
+
+            .footer-nav-list {
+                margin-left: 0;
+            }
+
+            .footer-social-icons {
+                margin-left: 0;
+                margin-right: 0;
+                flex-direction: row;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-text-container {
+                font-size: 22px;
+            }
+
+            .footer-nav-list {
+                font-size: 22px;
+            }
+        }
+
+
+
+
+
+
+
+/* ========== МОБИЛЬНЫЕ ТЕЛЕФОНЫ (до 768px) ========== */
+@media (max-width: 768px) {
+    /* Шапка */
+    .header-texnika {
+        height: 90px;
+    }
+    .header-logo-container-texnika img {
+        width: 100px;
+        height: 60px;
+        margin-left: 15px;
+    }
+    .header-icons-texnika {
+        margin-left: auto;
+        margin-right: 15px;
+    }
+    .home-placeholder-texnika img {
+        width: 32px;
+        height: 32px;
+        margin-right: 12px;
+    }
+    .burger-placeholder-texnika img {
+        width: 38px;
+        height: 30px;
+    }
+
+    /* Бургер-меню */
+    .burger-menu-texnika {
+        width: 260px;
+        height: auto;
+        top: 70px;
+        right: 10px;
+        left: auto;
+        margin-left: 0;
+        padding-top: 15px;
+    }
+    .close-icon-container-texnika {
+        margin-top: -18px;
+    }
+    .close-icon-placeholder-texnika {
+        font-size: 32px;
+    }
+    .burger-menu-texnika li {
+        font-size: 22px;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+    }
+
+    /* Заголовки секций */
+    .section-divider-people h1,
+    .section-divider-animal h1,
+    .section-divider-planet h1,
+    .section-star h1,
+    .section-divider-satellite h1,
+    .section-divider-texnika h1 {
+        font-size: 36px;
+    }
+    .section-divider-people,
+    .section-divider-animal,
+    .section-divider-planet,
+    .section-star,
+    .section-divider-satellite,
+    .section-divider-texnika {
+        height: 70px;
+        margin-top: 40px;
+    }
+
+    /* Сетка карточек — 2 колонки на телефонах как в макете */
+    .cards-container-people,
+    .cards-container-animal,
+    .cards-container-planet,
+    .stars-container,
+    .cards-container-satellite,
+    .cards-container-texnika {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+        padding: 0 15px 30px 15px;
+    }
+
+    /* Карточки */
+    .card-people,
+    .card-animal,
+    .card-planet,
+    .star,
+    .card-satellite,
+    .card-texnika {
+        max-width: 100%;
+        aspect-ratio: 1 / 1;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2), 0 0 0 3px #162e4d;
+    }
+
+    /* Модальное окно — компактное, как десктоп */
+    .modal-people,
+    .modal-animal,
+    .modal-planet,
+    .modal-star,
+    .modal-satellite,
+    .modal-texnika {
+        background-color: rgba(172, 183, 201, 0.85);
+    }
+
+    .modal-content-people,
+    .modal-content-animal,
+    .modal-content-planet,
+    .modal-content-star,
+    .modal-content-satellite,
+    .modal-content-texnika {
+        width: 95%;
+        max-width: 500px;
+        height: auto;
+        min-height: auto;
+        padding: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        border-radius: 20px;
+        box-shadow: 0 0 30px 0 #162e4d;
+    }
+
+    /* Картинка в модалке — сверху, как в десктопе, но меньше */
+    .modal-content-people .people-image,
+    .modal-content-animal .animal-image,
+    .modal-content-planet .planet-image,
+    .modal-content-star .star-image,
+    .modal-content-satellite .satellite-image,
+    .modal-content-texnika .texnika-image {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 0 auto 15px auto;
+        max-width: 180px;
+        max-height: 160px;
+        display: block;
+    }
+
+    /* Информация — под картинкой, как в десктопе */
+    .modal-content-people .people-info,
+    .modal-content-animal .animal-info,
+    .modal-content-planet .planet-info,
+    .modal-content-star .star-info,
+    .modal-content-satellite .satellite-info,
+    .modal-content-texnika .texnika-info {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    .modal-content-people .people-info h2,
+    .modal-content-animal .animal-info h2,
+    .modal-content-planet .planet-info h2,
+    .modal-content-star .star-info h2,
+    .modal-content-satellite .satellite-info h2,
+    .modal-content-texnika .texnika-info h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .modal-content-people .people-info h3,
+    .modal-content-animal .animal-info h3,
+    .modal-content-planet .planet-info h3,
+    .modal-content-star .star-info h3,
+    .modal-content-satellite .satellite-info h3,
+    .modal-content-texnika .texnika-info h3 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .characteristics-list-people,
+    .characteristics-list-animal,
+    .characteristics-list-planet,
+    .characteristics-list-star,
+    .characteristics-list-satellite,
+    .characteristics-list-texnika {
+        font-size: 13px;
+        padding-left: 20px;
+    }
+
+    /* Текстовая секция */
+    .modal-content-people .text-section-people,
+    .modal-content-animal .text-section-animal,
+    .modal-content-planet .text-section-planet,
+    .modal-content-star .text-section-star,
+    .modal-content-satellite .text-section-satellite,
+    .modal-content-texnika .text-section-texnika {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        padding: 12px;
+        margin-top: 10px;
+        font-size: 13px;
+        overflow-y: auto;
+        background: rgba(0,0,0,0.03);
+        border-radius: 12px;
+    }
+
+    /* Кнопка закрытия */
+    .close-button-people,
+    .close-button-animal,
+    .close-button-planet,
+    .close-button-star,
+    .close-button-satellite,
+    .close-button-texnika {
+        font-size: 28px;
+        top: 10px;
+        right: 15px;
+    }
+
+    /* ===== ПОДВАЛ — как на макете ===== */
+    .footer {
+        min-height: auto;
+        padding: 25px 0;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .footer-logo {
+        margin: 0 auto 10px auto;
+        width: 80px;
+        height: 50px;
+    }
+
+    .footer-text-container {
+        font-size: 12px;
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto 20px auto;
+    }
+
+    .footer-nav-list {
+        font-size: 14px;
+        margin: 0 0 20px 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-nav-list li {
+        margin-bottom: 0;
+    }
+
+    .footer-social-icons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        margin: 0;
+    }
+
+    .social-icon {
+        width: 32px;
+        height: 32px;
+        margin-top: 0;
+    }
+
+    .social-icon img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ========== МОБИЛЬНЫЕ ТЕЛЕФОНЫ (до 768px) ========== */
+@media (max-width: 768px) {
+    /* Шапка */
+    .header-texnika {
+        height: 90px;
+    }
+    .header-logo-container-texnika img {
+        width: 100px;
+        height: 70px;
+        margin-left: 15px;
+    }
+    .header-icons-texnika {
+        margin-left: auto;
+        margin-right: 15px;
+    }
+    .home-placeholder-texnika img {
+        width: 32px;
+        height: 32px;
+        margin-right: 25px;
+    }
+    .burger-placeholder-texnika img {
+        width: 38px;
+        height: 30px;
+    }
+
+    /* Бургер-меню */
+    .burger-menu-texnika {
+        width: 260px;
+        height: 210px;
+        top: 20px;
+        right: 10px;
+        left: auto;
+        margin-left: 0;
+        padding-top: 15px;
+    }
+    .close-icon-container-texnika {
+        margin-top: -18px;
+    }
+    .close-icon-placeholder-texnika {
+        font-size: 32px;
+    }
+    .burger-menu-texnika li {
+        font-size: 22px;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+    }
+
+    /* Заголовки секций */
+    .section-divider-people h1,
+    .section-divider-animal h1,
+    .section-divider-planet h1,
+    .section-star h1,
+    .section-divider-satellite h1,
+    .section-divider-texnika h1 {
+        font-size: 28px;
+    }
+    .section-divider-people,
+    .section-divider-animal,
+    .section-divider-planet,
+    .section-star,
+    .section-divider-satellite,
+    .section-divider-texnika {
+        height: 70px;
+        margin-top: 40px;
+    }
+
+    /* Сетка карточек — 2 колонки на телефонах как в макете */
+    .cards-container-people,
+    .cards-container-animal,
+    .cards-container-planet,
+    .stars-container,
+    .cards-container-satellite,
+    .cards-container-texnika {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+        padding: 0 15px 30px 15px;
+    }
+
+    /* Карточки */
+    .card-people,
+    .card-animal,
+    .card-planet,
+    .star,
+    .card-satellite,
+    .card-texnika {
+        max-width: 100%;
+        aspect-ratio: 1 / 1;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2), 0 0 0 3px #162e4d;
+    }
+
+    /* Модальное окно — компактное, как десктоп */
+    .modal-people,
+    .modal-animal,
+    .modal-planet,
+    .modal-star,
+    .modal-satellite,
+    .modal-texnika {
+        background-color: rgba(172, 183, 201, 0.85);
+    }
+
+    .modal-content-people,
+    .modal-content-animal,
+    .modal-content-planet,
+    .modal-content-star,
+    .modal-content-satellite,
+    .modal-content-texnika {
+        width: 95%;
+        max-width: 500px;
+        height: auto;
+        min-height: auto;
+        padding: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        border-radius: 20px;
+        box-shadow: 0 0 30px 0 #162e4d;
+    }
+
+    /* Картинка в модалке — сверху, как в десктопе, но меньше */
+    .modal-content-people .people-image,
+    .modal-content-animal .animal-image,
+    .modal-content-planet .planet-image,
+    .modal-content-star .star-image,
+    .modal-content-satellite .satellite-image,
+    .modal-content-texnika .texnika-image {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 0 auto 15px auto;
+        max-width: 180px;
+        max-height: 160px;
+        display: block;
+    }
+
+    /* Информация — под картинкой, как в десктопе */
+    .modal-content-people .people-info,
+    .modal-content-animal .animal-info,
+    .modal-content-planet .planet-info,
+    .modal-content-star .star-info,
+    .modal-content-satellite .satellite-info,
+    .modal-content-texnika .texnika-info {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    .modal-content-people .people-info h2,
+    .modal-content-animal .animal-info h2,
+    .modal-content-planet .planet-info h2,
+    .modal-content-star .star-info h2,
+    .modal-content-satellite .satellite-info h2,
+    .modal-content-texnika .texnika-info h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .modal-content-people .people-info h3,
+    .modal-content-animal .animal-info h3,
+    .modal-content-planet .planet-info h3,
+    .modal-content-star .star-info h3,
+    .modal-content-satellite .satellite-info h3,
+    .modal-content-texnika .texnika-info h3 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    /* Текстовая секция */
+    .modal-content-people .text-section-people,
+    .modal-content-animal .text-section-animal,
+    .modal-content-planet .text-section-planet,
+    .modal-content-star .text-section-star,
+    .modal-content-satellite .text-section-satellite,
+    .modal-content-texnika .text-section-texnika {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        padding: 12px;
+        margin-top: 10px;
+        font-size: 13px;
+        overflow-y: auto;
+        border-radius: 12px;
+    }
+
+    .modal-content-people .people-info h2,
+    .modal-content-animal .animal-info h2,
+    .modal-content-planet .planet-info h2,
+    .modal-content-star .star-info h2,
+    .modal-content-satellite .satellite-info h2,
+    .modal-content-texnika .texnika-info h2 {
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .modal-content-people .people-info h3,
+    .modal-content-animal .animal-info h3,
+    .modal-content-planet .planet-info h3,
+    .modal-content-star .star-info h3,
+    .modal-content-satellite .satellite-info h3,
+    .modal-content-texnika .texnika-info h3 {
+        font-size: 16px;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+
+    /* Список характеристик — маленький */
+    .characteristics-list-people,
+    .characteristics-list-animal,
+    .characteristics-list-planet,
+    .characteristics-list-star,
+    .characteristics-list-satellite,
+    .characteristics-list-texnika {
+        font-size: 14px !important;
+        padding-left: 20px;
+        margin: 5px 0 10px 0;
+        line-height: 1.4;
+    }
+
+
+    /* Кнопка закрытия */
+    .close-button-people,
+    .close-button-animal,
+    .close-button-planet,
+    .close-button-star,
+    .close-button-satellite,
+    .close-button-texnika {
+        font-size: 28px;
+        top: 10px;
+        right: 15px;
+    }
+
+     /* Стили для полосы прокрутки */
+    .modal-content-people .text-section-people::-webkit-scrollbar,
+    .modal-content-animal .text-section-animal::-webkit-scrollbar,
+    .modal-content-planet .text-section-planet::-webkit-scrollbar,
+    .modal-content-star .text-section-star::-webkit-scrollbar,
+    .modal-content-satellite .text-section-satellite::-webkit-scrollbar,
+    .modal-content-texnika .text-section-texnika::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .modal-content-people .text-section-people::-webkit-scrollbar-track,
+    .modal-content-animal .text-section-animal::-webkit-scrollbar-track,
+    .modal-content-planet .text-section-planet::-webkit-scrollbar-track,
+    .modal-content-star .text-section-star::-webkit-scrollbar-track,
+    .modal-content-satellite .text-section-satellite::-webkit-scrollbar-track,
+    .modal-content-texnika .text-section-texnika::-webkit-scrollbar-track {
+        background: #d1d5db;
+        border-radius: 10px;
+    }
+
+    .modal-content-people .text-section-people::-webkit-scrollbar-thumb,
+    .modal-content-animal .text-section-animal::-webkit-scrollbar-thumb,
+    .modal-content-planet .text-section-planet::-webkit-scrollbar-thumb,
+    .modal-content-star .text-section-star::-webkit-scrollbar-thumb,
+    .modal-content-satellite .text-section-satellite::-webkit-scrollbar-thumb,
+    .modal-content-texnika .text-section-texnika::-webkit-scrollbar-thumb {
+        background: #162e4d;
+        border-radius: 10px;
+    }
+
+    /* ===== ПОДВАЛ — как на макете ===== */
+    .footer {
+        min-height: auto;
+        padding: 25px 0;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .footer-logo {
+        margin: 0 auto 10px auto;
+        width: 80px;
+        height: 50px;
+    }
+
+    .footer-text-container {
+        font-size: 12px;
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto 20px auto;
+    }
+
+    .footer-nav-list {
+        font-size: 14px;
+        margin: 0 0 20px 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-nav-list li {
+        margin-bottom: 0;
+    }
+
+    .footer-social-icons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        margin: 0;
+    }
+
+    .social-icon {
+        width: 32px;
+        height: 32px;
+        margin-top: 0;
+    }
+
+    .social-icon img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+
+
+
+
+
+/* ========== МАЛЕНЬКИЕ ТЕЛЕФОНЫ (до 480px) ========== */
+@media (max-width: 480px) {
+    .cards-container-people,
+    .cards-container-animal,
+    .cards-container-planet,
+    .stars-container,
+    .cards-container-satellite,
+    .cards-container-texnika {
+        gap: 10px;
+        padding: 0 10px 20px 10px;
+    }
+
+    .modal-content-people,
+    .modal-content-animal,
+    .modal-content-planet,
+    .modal-content-star,
+    .modal-content-satellite,
+    .modal-content-texnika {
+        width: 98%;
+        max-width: 380px;
+        padding: 15px;
+    }
+
+    .modal-content-people .text-section-people,
+    .modal-content-animal .text-section-animal,
+    .modal-content-planet .text-section-planet,
+    .modal-content-star .text-section-star,
+    .modal-content-satellite .text-section-satellite,
+    .modal-content-texnika .text-section-texnika {
+        max-height: 180px;
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .characteristics-list-people,
+    .characteristics-list-animal,
+    .characteristics-list-planet,
+    .characteristics-list-star,
+    .characteristics-list-satellite,
+    .characteristics-list-texnika {
+        font-size: 13px !important;
+    }
+}
+
+/* ========== ОЧЕНЬ МАЛЕНЬКИЕ (до 380px) ========== */
+@media (max-width: 380px) {
+    .section-divider-people h1,
+    .section-divider-animal h1,
+    .section-divider-planet h1,
+    .section-star h1,
+    .section-divider-satellite h1,
+    .section-divider-texnika h1 {
+        font-size: 24px;
+    }
+
+    .modal-content-people .text-section-people,
+    .modal-content-animal .text-section-animal,
+    .modal-content-planet .text-section-planet,
+    .modal-content-star .text-section-star,
+    .modal-content-satellite .text-section-satellite,
+    .modal-content-texnika .text-section-texnika {
+        max-height: 160px;
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .characteristics-list-people,
+    .characteristics-list-animal,
+    .characteristics-list-planet,
+    .characteristics-list-star,
+    .characteristics-list-satellite,
+    .characteristics-list-texnika {
+        font-size: 12px !important;
+    }
+}
+    </style>
+
+    <header class="header-texnika">
+        <div class="header-max-texnika">
+           <div class="header-background-texnika">
+               <div class="gif-placeholder-texnika">
+                <img src="img/starry_sky_original_style.gif" alt="Фон шапки" class="header-bg">
+               </div>
+           </div>
+
+           <div class="header-logo-container-texnika">
+               <img src="img/LOGO глав.png" alt="Логотип" >
+           </div>
+
+           <div class="header-icons-texnika">
+                   <div class="home-placeholder-texnika">
+                       <a href="glav.html"><img src="img/ДОМИК.png" alt="home"></a>
+                   </div>
+
+               <div id="burger-icon-texnika">
+                   <div class="burger-placeholder-texnika">
+                       <img src="img/БУРГЕРНОЕ МЕНЮ.png" alt="burger">
+                   </div>
+               </div>
+           </div>
+       </div>
+    </header>
+
+    <div class="burger-menu-texnika" id="burger-menu-texnika">
+        <div class="close-icon-container-texnika">
+            <div class="close-icon-placeholder-texnika">
+                <a href="#glav.html">✕</a>
+            </div>
+        </div>
+        <ul>
+            <li><a href="kosmotel.html">Космические тела</a></li>
+            <li><a href="kosmonavt.html">Покорители космоса</a></li>
+            <li><a href="tehnika.html">Космическая техника</a></li>
+        </ul>
+    </div>
+
+    <!-- ========== СЕКЦИЯ: КОСМИЧЕСКАЯ ТЕХНИКА ========== -->
+    <div class="section-divider-texnika">
+        <h1>ТЕХНИКА</h1>
+    </div>
+
+    <div class="cards-container-texnika">
+        <div class="card-texnika" onclick="openModalTexnika('img/Восток.png', 'Восток', 'Основные характеристики:', ['Полное название: «Восток-1»', 'Сборка: 1960 - 1963 гг.', 'Масса: 4,73 тонны', 'Жилой объём: 1,6 м³', 'Экипаж: 1 человек', 'Количество модулей: 2 (спускаемый аппарат + приборный отсек)', 'Страны-участницы: 1 (СССР)'], 'первый в мире пилотируемый космический корабль, созданный под руководством Сергея Королёва в ОКБ-1. Разработка началась в 1958 году, а уже 12 апреля 1961 года «Восток-1» с Юрием Гагариным на борту совершил исторический полёт. Корабль состоял из двух основных частей: сферического спускаемого аппарата диаметром 2,3 метра и приборного отсека конической формы. Спускаемый аппарат был покрыт теплозащитным слоем из асботекстолита, который обугливался и испарялся при входе в атмосферу, унося с собой тепло. Масса корабля составляла 4,73 тонны, он мог находиться на орбите до 10 суток. Система жизнеобеспечения поддерживала нормальную атмосферу с давлением около 1 атмосферы и температурой 18-25 °C. Управление осуществлялось автоматически, но на случай нештатной ситуации пилоту передавался конверт с кодом для разблокировки ручного управления. Корабль «Восток» совершил шесть пилотируемых полётов (1961-1963), включая полёт Валентины Терешковой - первой женщины в космосе. На «Востоке-2» Герман Титов совершил первый суточный полёт, а на «Востоке-3» и «Востоке-4» был осуществлён первый групповой полёт двух кораблей.', 'Конструкция «Востока» имела уникальную особенность: космонавт не оставался в корабле до самой посадки. На высоте около 7 километров он катапультировался из спускаемого аппарата и приземлялся на парашюте отдельно от капсулы. Это было связано с тем, что мягкая посадка корабля с человеком внутри была технически невозможна: «Восток» приземлялся с ударом о землю, и космонавт мог получить серьёзные травмы. Кроме того, у корабля не было двигателей мягкой посадки. Этот факт скрывался от международной общественности до 1971 года, так как по правилам Международной авиационной федерации (FAI) для фиксации космического рекорда пилот должен приземляться вместе с аппаратом. Советские представители утверждали, что Гагарин приземлился в кабине, и только спустя десятилетие была раскрыта правда. Интересно, что сам Гагарин и Терешкова тренировались катапультироваться десятки раз, и эта система спасла бы их жизни в случае аварии на старте.')">
+            <img src="img/Восток.png" alt="Восток">
+        </div>
+        <div class="card-texnika" onclick="openModalTexnika('img/Союз.png', 'Союз', 'Основные характеристики:', ['Полное название: «Союз»', 'Сборка: 1966 - н.в', 'Масса: около 7 тонн', 'Жилой объём: 8 м³','Экипаж: до 3 человек', 'Количество модулей: 3 (бытовой отсек, спускаемый аппарат, приборно-агрегатный отсек)', 'Страны-участницы: СССР / Россия'], 'советский и российский пилотируемый космический корабль, один из самых надёжных и долговечных аппаратов в истории космонавтики. Первый беспилотный испытательный полёт состоялся в 1966 году, а первый пилотируемый - 23 апреля 1967 года (корабль «Союз-1» с Владимиром Комаровым, завершившийся трагедией). Корабль создан в ОКБ-1 под руководством Сергея Королёва как часть советской лунной программы. «Союз» состоит из трёх основных отсеков: приборно-агрегатного отсека (служебный модуль), спускаемого аппарата и бытового отсека. Спускаемый аппарат имеет уникальную форму «фары» - это обеспечивает оптимальную аэродинамику при входе в атмосферу и позволяет точно управлять спуском. Масса корабля составляет около 7 тонн, он может перевозить до трёх космонавтов и находиться в автономном полёте до 30 суток. Корабль оснащён системой сближения и стыковки «Курс», которая позволяет автоматически стыковаться с орбитальными станциями. За более чем 55 лет эксплуатации модификации «Союза» совершили более 150 полётов, доставляя экипажи на станции «Салют», «Мир» и МКС. Корабль неоднократно модернизировался: от первых «Союзов» (1967-1971) до современных «Союз МС» (с 2016 года), оснащённых цифровой системой управления и улучшенными средствами связи.', 'В октябре 1983 года произошла одна из самых драматичных аварий в истории пилотируемой космонавтики, которая продемонстрировала надёжность системы аварийного спасения (САС) «Союза». При подготовке к запуску «Союз Т-10-1» на космодроме Байконур за 90 секунд до старта произошла утечка топлива, и ракета-носитель «Союз» загорелась. Пожар быстро распространился, и стало ясно, что взрыв неизбежен. Сработала система аварийного спасения: специальные твердотопливные двигатели за 5 секунд отвели спускаемый аппарат с экипажем (космонавты Владимир Титов и Геннадий Стрекалов) от горящей ракеты на высоту 600-700 метров. Капсула приземлилась на парашюте в 4 километрах от стартового стола, а через несколько секунд ракета взорвалась, полностью уничтожив стартовый комплекс. Космонавты испытали перегрузку до 14–17 g, но остались живы и здоровы. Это был первый и единственный раз, когда САС «Союза» спасла экипаж на старте. Интересно, что после этой аварии конструкция системы не претерпела существенных изменений - она и так оказалась идеальной. Эта же система спасла жизни Николаю Тихонову и Олегу Кононенко в октябре 2018 года, когда ракета «Союз-ФГ» потерпела аварию на участке работы первой ступени.')">
+            <img src="img/Союз.png" alt="Союз">
+        </div>
+        <div class="card-texnika" onclick="openModalTexnika('img/Протон.png', 'Протон', 'Основные характеристики:', ['Полное название: «Протон» (УР-500 / «Протон-К», «Протон-М»)', 'Сборка: 1965 - 2023 гг.', 'Масса: около 700 тонн', 'Жилой объём: отсутствует', 'Экипаж: беспилотная', 'Количество модулей: 3-4 (ступени ракеты)', 'Страны-участницы: СССР / Россия'], 'одна из самых мощных и надёжных ракет-носителей в истории мировой космонавтики, тяжёлый носитель, созданный в ОКБ-52 под руководством Владимира Челомея. Разработка началась в 1961 году, первый запуск состоялся 16 июля 1965 года (беспилотный испытательный полёт). Изначально ракета создавалась как сверхтяжёлая межконтинентальная баллистическая ракета УР-500 для доставки ядерного заряда мощностью 100 мегатонн на расстояние до 13 000 км, но после принятия программы лунных полётов была переориентирована на космические задачи. «Протон» состоит из трёх ступеней (в базовой версии), работает на высокотоксичном, но высокоэнергетическом топливе: несимметричный диметилгидразин (гептил) и тетраоксид диазота (амил). Высота ракеты составляет около 57 метров, стартовая масса - около 700 тонн, полезная нагрузка на низкую околоземную орбиту - до 23 тонн. «Протон» стал рабочей лошадкой советской и российской космонавтики: он выводил на орбиту орбитальные станции «Салют» и «Мир», модули МКС, автоматические межпланетные станции к Луне, Венере, Марсу, спутники связи и навигации. Ракета имеет несколько модификаций: от двухступенчатого «Протон-К» до современного «Протон-М» с улучшенной системой управления. За более чем 55 лет эксплуатации состоялось более 400 запусков, из них около 90% успешных.', 'Название «Протон» ракета получила не случайно: в 1960-е годы СССР активно продвигал идею мирного использования атомной энергии, и ракета была названа в честь элементарной частицы - протона, символа атомной эры. Однако у ракеты есть и другое, менее известное название - УР-500 («Универсальная ракета» конструкции Челомея). Интересно, что «Протон» изначально создавался как оружие: это была ракета для доставки сверхмощного термоядерного заряда. Но когда в 1964 году Никита Хрущёв был смещён с поста, новая советская власть отдала приоритет лунной программе Королёва, и ракета Челомея была переориентирована на космические задачи. Первая модификация «Протона» имела любопытную особенность: она использовала в качестве второй ступени ракету «Протон» меньшего размера, создавая своеобразную «матрёшку». Ракета известна своей «громкостью»: при старте уровень шума достигает 160 децибел, что превышает болевой порог человека. Кроме того, «Протон» использует высокотоксичное топливо: гептил - это яд, который может вызывать тяжёлые отравления. В случае аварий остатки топлива загрязняют территорию, что неоднократно вызывало протесты экологов, особенно в Алтайском крае, куда падают отработанные ступени. Несмотря на это, «Протон» остаётся одной из самых востребованных ракет для коммерческих запусков: на нём выводили спутники более 20 стран.')">
+            <img src="img/Протон.png" alt="Протон">
+        </div>
+        <div class="card-texnika" onclick="openModalTexnika('img/Энергия - буран.png', 'Энергия - Буран', 'Основные характеристики:', ['Полное название: Ракета «Энергия» + корабль «Буран»', 'Сборка: 1976 - 1988 гг.', 'Масса: около 2 400 тонн', 'Жилой объём: 70 м³ (у «Бурана»)', 'Экипаж: до 10 человек (планировалось)', 'Количество модулей: 2 (ракета «Энергия» + корабль «Буран»)', 'Страны-участницы: СССР'], 'советская многоразовая космическая система, ответ на американскую программу Space Shuttle. Разработка началась в 1976 году под руководством Владимира Губанова в НПО «Энергия». Ракета-носитель «Энергия» была сверхтяжёлой: высота 58 метров, стартовая масса 2400 тонн, полезная нагрузка на орбиту до 100 тонн. Она состояла из центрального блока (бак с водородом и кислородом) и четырёх боковых ускорителей на керосине и кислороде. Орбитальный корабль «Буран» был многоразовым крылатым аппаратом длиной 36 метров, размахом крыльев 24 метра, массой около 105 тонн. В отличие от американского шаттла, который имел собственные маршевые двигатели, «Буран» не нёс основных двигателей - они были на ракете «Энергия», что делало систему более гибкой: ракета могла запускать и другие полезные нагрузки. «Буран» оснащался двумя двигателями для маневрирования на орбите и теплозащитной системой из 38 000 керамических плиток. Первый и единственный орбитальный полёт состоялся 15 ноября 1988 года: «Буран» совершил два витка вокруг Земли, после чего совершил полностью автоматическую посадку на космодроме Байконур в сложных метеоусловиях (боковой ветер до 17 м/с). Программа была закрыта в 1993 году из-за распада СССР и отсутствия финансирования. Построено два летных экземпляра «Бурана» и несколько макетов.', 'Полёт «Бурана» 15 ноября 1988 года вошёл в историю как один из самых впечатляющих достижений советской космонавтики, но и как пример трагической судьбы великого проекта. Главное отличие от американского шаттла заключалось в том, что «Буран» совершил посадку полностью автоматически, без экипажа на борту. Это было беспрецедентно: ни один космический корабль до этого не садился в автоматическом режиме с орбиты. Система управления на основе бортового компьютера «Бисер-4» самостоятельно определила посадочную полосу, зашла на глиссаду и совершила идеальную посадку с первого касания. Экипажа не было из-за спешки: политическое руководство требовало запустить «Буран» до конца 1988 года, чтобы сравняться с США, но система жизнеобеспечения для космонавтов ещё не была готова. Интересно, что после посадки «Буран» остановился всего в 10 метрах от расчётной точки - точность, недоступная даже современным системам. Однако судьба программы оказалась печальной: после распада СССР в 1991 году финансирование прекратилось. Готовый второй экземпляр «Бурана» (изделие 2.01) с установленными двигателями и системами так и не полетел. В 2002 году первый «Буран» (изделие 1.01), хранившийся на Байконуре, был уничтожен при обрушении крыши монтажно-испытательного корпуса вместе с ракетой «Энергия». От уникального корабля остались лишь обломки и несколько макетов в музеях. Это одна из самых трагичных страниц в истории космонавтики: технология, опередившая своё время, была потеряна из-за политических и экономических потрясений.')">
+            <img src="img/Энергия - буран.png" alt="Энергия - буран">
+        </div>
+        <div class="card-texnika" onclick="openModalTexnika('img/МКС.png', 'МКС', 'Основные характеристики:', ['Полное название: Международная космическая станция (МКС / ISS)', 'Сборка: 1998 – н.в.', 'Масса: около 420 тонн', 'Жилой объём: 388 м³','Экипаж: до 7 человек (постоянно, с ротацией)', 'Количество модулей: 16 основных', 'Страны-участницы: 15 (Россия, США, Канада, Япония, страны ЕКА и др.)'], 'крупнейший искусственный объект на орбите Земли, результат беспрецедентного международного сотрудничества. Строительство началось 20 ноября 1998 года с запуска российского модуля «Заря», а 2 ноября 2000 года на станцию прибыл первый постоянный экипаж (Уильям Шеперд, Юрий Гидзенко, Сергей Крикалёв). МКС создана при участии 15 стран: России, США, Канады, Японии и 11 стран Европейского космического агентства. Станция летает на высоте 400-420 км со скоростью около 28 000 км/ч, совершая 15,5 витков вокруг Земли за сутки. Масса станции составляет около 420 тонн, длина - 109 метров, ширина - 73 метра (по размаху солнечных батарей). МКС состоит из 14 основных модулей: российских («Заря», «Звезда», «Пирс», «Поиск», «Рассвет», «Наука»), американских («Юнити», «Дестини», «Квест», «Транквилити», «Купол»), европейских («Коламбус») и японских («Кибо»). Станция оснащена восемью солнечными батареями общей площадью 2500 м², которые вырабатывают до 120 кВт электроэнергии. На борту постоянно находятся 6-7 космонавтов, которые проводят научные эксперименты в условиях микрогравитации: исследования в области биологии, медицины, физики, материаловедения, наблюдения Земли и космоса. МКС служит также испытательным полигоном для технологий будущих полётов на Луну и Марс.', 'МКС - самый дорогой объект, когда-либо созданный человечеством: общая стоимость строительства и эксплуатации оценивается в 150 миллиардов долларов (по курсу 2020-х годов). Для сравнения: это больше, чем стоимость строительства всех пирамид Гизы, или примерно столько же, сколько стоила разработка и запуск всех космических шаттлов США за 30 лет. Станция летает так быстро, что космонавты видят восход и закат Солнца каждые 45 минут - за сутки они наблюдают 16 рассветов и 16 закатов. Интересно, что МКС видна невооружённым глазом с Земли: это третий по яркости объект на ночном небе после Луны и Венеры. Станция выглядит как яркая движущаяся звезда, которая медленно пересекает небо за 5-6 минут. Существуют специальные сайты и приложения, которые позволяют точно рассчитать, когда МКС пролетит над вашим городом. Ещё один удивительный факт: из-за релятивистских эффектов (замедления времени при высокой скорости) космонавты на МКС стареют чуть медленнее, чем люди на Земле. За 6 месяцев полёта астронавт «молодеет» примерно на 0,005 секунды по сравнению с теми, кто остался на Земле. Этот эффект предсказан общей теорией относительности Эйнштейна и подтверждён сверхточными атомными часами. Кроме того, на МКС существует уникальная традиция: перед возвращением на Землю каждый космонавт оставляет на станции что-то личное - фотографию семьи, значок, монету. Эти предметы становятся частью истории станции.')">
+            <img src="img/МКС.png" alt="МКС">
+        </div>
+    </div>
+
+
+    <!-- ========== МОДАЛЬНОЕ ОКНО ========== -->
+    <div id="modalTexnika" class="modal-texnika">
+        <div class="modal-content-texnika">
+            <button class="close-button-texnika" onclick="closeModal('modalTexnika')">✕</button>
+            <img src="" alt="Изображение техники" class="texnika-image">
+            <div class="texnika-info">
+                <h2 id="texnikaLabel"></h2>
+                <h3 id="texnikaSubheader"></h3>
+                <ul id="texnikaCharacteristics" class="characteristics-list-texnika"></ul>
+            </div>
+            <div class="text-section-texnika" id="texnikaText"></div>
+        </div>
+    </div>
+
+
+    <style>
+        .text-section-texnika {
+            white-space: pre-wrap;
+            line-height: 1.6;
+            font-family: 'Segoe UI', 'Inter', 'Roboto', system-ui, sans-serif;
+        }
+    </style>
+    <footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-logo"><img src="img/LOGO глав.png" alt="logo"></div>
+        <div class="footer-text-container">
+            - это небольшое, но амбициозное комьюнити начинающих верстальщиков, регулярно практикующихся в адаптивной вёрстке.
+        </div>
+        <ul class="footer-nav-list">
+            <li><a href="kosmotel.html">Космические тела</a></li>
+            <li><a href="kosmonavt.html">Покорители космоса</a></li>
+            <li><a href="tehnika.html">Космическая техника</a></li>
+        </ul>
+        <ul class="footer-social-icons">
+            <li><a href="https://vk.com" class="social-icon"><img src="img/LOGO VK.png" alt="vk"></a></li>
+            <li><a href="https://ok.ru" class="social-icon"><img src="img/LOGO OK.png" alt="ok"></a></li>
+            <li><a href="https://mail.ru" class="social-icon"><img src="img/LOGO EMail.png" alt="EMail"></a></li>
+        </ul>
+    </div>
+</footer>
+
+    <script>
+    const burgerIcon = document.getElementById('burger-icon-texnika');
+    const burgerMenu = document.getElementById('burger-menu-texnika');
+    const closeIcon = document.querySelector('.close-icon-container-texnika');
+
+    function openBurgerMenu() {
+        burgerMenu.classList.add('open-texnika');
+    }
+
+    function closeBurgerMenu() {
+        burgerMenu.classList.remove('open-texnika');
+    }
+
+    if (burgerIcon) burgerIcon.addEventListener('click', openBurgerMenu);
+    if (closeIcon) closeIcon.addEventListener('click', closeBurgerMenu);
+
+    // Закрытие бургер-меню при прокрутке страницы
+    window.addEventListener('scroll', function() {
+        const burgerMenu = document.getElementById('burger-menu-texnika');
+        if (burgerMenu && burgerMenu.classList.contains('open-texnika')) {
+            burgerMenu.classList.remove('open-texnika');
+        }
+    });
+
+
+
+    // Функция для открытия модального окна техники
+    function openModalTexnika(imageUrl, name, subheader, characteristics, description, funFact) {
+        const modal = document.getElementById("modalTexnika");
+        const modalImage = document.querySelector("#modalTexnika .texnika-image");
+        if (modalImage) modalImage.src = imageUrl;
+        
+        document.getElementById("texnikaLabel").textContent = name;
+        document.getElementById("texnikaSubheader").textContent = subheader;
+        
+        const list = document.getElementById("texnikaCharacteristics");
+        if (list) {
+            list.innerHTML = "";
+            characteristics.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                list.appendChild(li);
+            });
+        }
+        
+        let fullText = "";
+        if (description && description.trim() !== "") {
+            fullText = "<strong>Описание:</strong> " + description;
+        }
+        if (funFact && funFact.trim() !== "") {
+            fullText = fullText + "\n\n<strong>Интересный факт:</strong> " + funFact;
+        }
+        document.getElementById("texnikaText").innerHTML = fullText;
+        if (modal) modal.style.display = "block";
+        
+    
+        //  ДОБАВЬТЕ ЭТУ СТРОЧКУ — сбрасывает прокрутку в начало
+        const textSection = document.querySelector("#modalTexnika .text-section-texnika");
+        if (textSection) textSection.scrollTop = 0;
+        
+        if (modal) modal.style.display = "block";
+        }
+
+    // Функция закрытия модального окна
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = "none";
+        }
+    }
+
+     
+
+    // Закрытие при клике на фон
+    window.onclick = function(event) {
+        const modal = document.getElementById('modalTexnika');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    </script>
+</body>
+</html>

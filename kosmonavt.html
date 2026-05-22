@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Космические первопроходцы</title>
+</head>
+<body>
+    <style>
+        /* Фон всего сайта */
+        body {
+            background-color: #C3CBD8;
+            margin: 0;
+            font-family: 'Segoe UI', 'Inter', 'Roboto', system-ui, sans-serif;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+
+        .header-texnika {
+            height: 150px;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .header-max-texnika {
+            max-width: 1440px;
+            width: 100%;
+            display: flex;
+        }
+        .header-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .header-background-texnika {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gif-placeholder-texnika {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        .header-logo-container-texnika img {
+            width: 200px;
+            height: 130px;
+            margin-left: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+
+        .header-icons-texnika {
+            display: flex;
+            align-items: center;
+            margin-left: 1000px;
+        }
+
+        .home-placeholder-texnika  img {
+            width: 50px;
+            height: 50px;
+            margin-right: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .burger-placeholder-texnika img {
+            width: 55px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .burger-menu-texnika {
+            display: none;
+            position: fixed;
+            top: 40px;
+            margin-left: 1000px;
+            max-width: 1440px;
+            width: 400px;
+            height: 300px;
+            background-color: #C3CBD8;
+            z-index: 1000;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-top: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            border: 3px solid #162E4D;
+        }
+
+        .burger-menu-texnika.open-texnika {
+            display: flex;
+        }
+
+        .close-icon-container-texnika {
+            width: 50px;
+            height: 50px;
+            margin-top: -23px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .close-icon-placeholder-texnika {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+        }
+
+        .burger-menu-texnika ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            text-align: right;
+        }
+
+        .burger-menu-texnika li {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #162E4D;
+            font-size: 32px;
+            color: #03122F;
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        .burger-menu-texnika li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .burger-menu-texnika a {
+            text-decoration: none;
+            color: #03122F;
+        }
+
+
+
+
+
+        /*  СЕКЦИЯ 1: ЛЮДИ  */
+        .section-divider-people h1 {
+            font-size: 64px;
+            font-weight: bold;
+            color: white;
+            left: 50px;
+        }
+
+        .section-divider-people {
+            width: 100%;
+            height: 110px;
+            background-color: #162e4d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        .cards-container-people {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(280px, 555px));
+            justify-content: center;
+            gap: 100px 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 100px;
+            padding: 20px 15px 50px 15px;
+        }
+
+        .card-people {
+            width: 100%;
+            max-width: 555px;
+            aspect-ratio: 1 / 1;
+            background: #eeeff3;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.25s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 0 70px 0 #162e4d;
+        }
+
+        .card-people:hover {
+            transform: translateY(-6px);
+        }
+
+        .card-people img {
+            width: auto;
+            height: auto;
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            transition: transform 0.2s;
+        }
+
+        .card-people:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Модальное окно людей — текст внизу под картинкой */
+        .modal-people {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(172, 183, 201, 0.7);
+        }
+
+        .modal-content-people {
+            position: relative;
+            background-color: #eeeff3;
+            margin: auto;
+            padding: 20px;
+            border-radius: 16px;
+            width: 1300px;
+            height: 800px;
+            box-shadow: 0 0 70px 0 #162e4d;
+            top: 50px;
+        }
+
+        .modal-content-people .people-image {
+            width: auto;
+            height: auto;
+            max-width: 500px;
+            max-height: 400px;
+            position: absolute;
+            left: 100px;
+            top: 60px;
+            object-fit: contain;
+        }
+
+        .modal-content-people .people-info {
+            position: absolute;
+            top: 60px;
+            right: 50px;
+            width: calc(100% - 70px - 500px - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .modal-content-people .people-info h2 {
+            font-size: 44px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-left: 0;
+            color: #000000;
+        }
+
+        .modal-content-people .people-info h3 {
+            font-size: 28px;
+            margin-left: 0;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .modal-content-people .characteristics-list-people {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #000000;
+            margin-top: 0;
+            padding-left: 20px;
+        }
+
+        .modal-content-people .text-section-people {
+            position: absolute;
+            bottom: 50px;
+            left: 70px;
+            right: 50px;
+            height: auto;
+            max-height: 280px;
+            padding: 30px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            font-size: 20px;
+            color: #000000;
+            background: transparent;
+            top: auto;
+        }
+
+        .modal-content-people .close-button-people {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 42px;
+            font-weight: bold;
+            color: #051332;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*  СЕКЦИЯ 2: ЖИВОТНЫЕ  */
+        .section-divider-animal h1 {
+            font-size: 64px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .section-divider-animal {
+            width: 100%;
+            height: 110px;
+            background-color: #02193B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        .cards-container-animal {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(280px, 555px));
+            justify-content: center;
+            gap: 100px 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 100px;
+            padding: 20px 15px 50px 15px;
+        }
+
+        .card-animal {
+            width: 100%;
+            max-width: 555px;
+            aspect-ratio: 1 / 1;
+            background: #eeeff3;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.25s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 0 70px 0 #02193B;
+        }
+
+        .card-animal:hover {
+            transform: translateY(-6px);
+        }
+
+        .card-animal img {
+            width: auto;
+            height: auto;
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            transition: transform 0.2s;
+        }
+
+        .card-animal:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Модальное окно животных */
+        .modal-animal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(172, 183, 201, 0.7);
+        }
+
+        .modal-content-animal {
+            position: relative;
+            background-color: #eeeff3;
+            margin: auto;
+            padding: 20px;
+            border-radius: 16px;
+            width: 1300px;
+            height: 800px;
+            box-shadow: 0 0 70px 0 #162e4d;
+            top: 50px;
+        }
+
+        .modal-content-animal .animal-image {
+            width: auto;
+            height: auto;
+            max-width: 500px;
+            max-height: 400px;
+            position: absolute;
+            left: 100px;
+            top: 60px;
+            object-fit: contain;
+        }
+
+        .modal-content-animal .animal-info {
+            position: absolute;
+            top: 60px;
+            right: 50px;
+            width: calc(100% - 70px - 500px - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .modal-content-animal .animal-info h2 {
+            font-size: 44px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-left: 0;
+            color: #000000;
+        }
+
+        .modal-content-animal .animal-info h3 {
+            font-size: 28px;
+            margin-left: 0;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .modal-content-animal .characteristics-list-animal {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #000000;
+            margin-top: 0;
+            padding-left: 20px;
+        }
+
+        .modal-content-animal .text-section-animal {
+            position: absolute;
+            bottom: 50px;
+            left: 70px;
+            right: 50px;
+            height: auto;
+            max-height: 280px;
+            padding: 30px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            font-size: 20px;
+            color: #000000;
+            background: transparent;
+            top: auto;
+        }
+
+        .modal-content-animal .close-button-animal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 42px;
+            font-weight: bold;
+            color: #051332;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+
+        /*  АДАПТИВНОСТЬ  */
+        @media (max-width: 768px) {
+            .section-divider-people h1, .section-divider-animal h1 {
+                font-size: 40px;
+            }
+            .cards-container-people, .cards-container-animal {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            .card-people, .card-animal {
+                box-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 0 0 5px #162e4d;
+            }
+            .modal-content-people, .modal-content-animal {
+                width: 95%;
+                height: auto;
+                min-height: 600px;
+                padding: 15px;
+                top: 20px;
+            }
+            .modal-content-people .people-image,
+            .modal-content-animal .animal-image {
+                position: static;
+                margin: 0 auto 20px;
+                max-width: 80%;
+                max-height: 250px;
+                display: block;
+            }
+            .people-info, .animal-info {
+                position: static;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .people-info h2, .people-info h3,
+            .animal-info h2, .animal-info h3 {
+                margin-left: 0;
+                font-size: 28px;
+            }
+            .characteristics-list-people, .characteristics-list-animal {
+                font-size: 16px;
+                text-align: left;
+            }
+            .modal-content-people .text-section-people,
+            .modal-content-animal .text-section-animal {
+                position: static;
+                width: 100%;
+                height: auto;
+                max-height: 250px;
+                padding: 20px;
+                margin-top: 20px;
+            }
+            .close-button-people, .close-button-animal {
+                font-size: 32px;
+                top: 10px;
+                right: 15px;
+            }
+        }
+
+
+.footer {
+            background-color: #051332;
+            width: 100%;
+            min-height: 350px;
+            display: flex;
+            justify-content: center;
+            margin-top: auto;
+        }
+
+        .footer-inner {
+            max-width: 1440px;
+            width: 100%;
+            display: flex;
+            color: #ffffff;
+            padding-bottom: 50px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            width: 246px;
+            height: 150px;
+            margin-top: 30px;
+            margin-left: 50px;
+            flex-shrink: 0;
+        }
+
+        .footer-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .footer-text-container {
+            width: 420px;
+            margin-top: 65px;
+            margin-left: 30px;
+            font-size: 32px;
+            line-height: 1.4;
+            flex-shrink: 0;
+        }
+
+        .footer-nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 80px;
+            margin-left: 80px;
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .footer-nav-list li {
+            margin-bottom: 35px;
+            transition: transform 0.2s ease;
+        }
+
+        .footer-nav-list a {
+            color: #ffffff;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .footer-nav-list li:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        .footer-nav-list a:active {
+            color: #aaaaaa;  /* Тёмно-серый цвет в момент нажатия */
+        }
+
+        .footer-nav-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-social-icons {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 48px;
+            margin-left: auto;
+            margin-right: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .footer-social-icons li {
+            margin-bottom: 15px;
+        }
+
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #051332;
+            transition: transform 0.2s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        .social-icon:active {
+            opacity: 0.6;           /* Делаем иконку полупрозрачной (тёмный эффект) */
+            transform: scale(0.95); /* Лёгкое уменьшение для эффекта нажатия */
+        }
+
+        @media (max-width: 1200px) {
+            .cards-container-texnika {
+                gap: 100px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .cards-container-texnika {
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-text-container {
+                margin-left: 0;
+            }
+
+            .footer-nav-list {
+                margin-left: 0;
+            }
+
+            .footer-social-icons {
+                margin-left: 0;
+                margin-right: 0;
+                flex-direction: row;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-text-container {
+                font-size: 22px;
+            }
+
+            .footer-nav-list {
+                font-size: 22px;
+            }
+        }
+
+
+
+
+
+
+
+        
+
+
+        
+/* ========== МОБИЛЬНЫЕ ТЕЛЕФОНЫ (до 768px) ========== */
+@media (max-width: 768px) {
+    /* Шапка */
+    .header-texnika {
+        height: 90px;
+    }
+    .header-logo-container-texnika img {
+        width: 100px;
+        height: 70px;
+        margin-left: 15px;
+    }
+    .header-icons-texnika {
+        margin-left: auto;
+        margin-right: 15px;
+    }
+    .home-placeholder-texnika img {
+        width: 32px;
+        height: 32px;
+        margin-right: 25px;
+    }
+    .burger-placeholder-texnika img {
+        width: 38px;
+        height: 30px;
+    }
+
+    /* Бургер-меню */
+    .burger-menu-texnika {
+        width: 260px;
+        height: 210px;
+        top: 20px;
+        right: 10px;
+        left: auto;
+        margin-left: 0;
+        padding-top: 15px;
+    }
+    .close-icon-container-texnika {
+        margin-top: -18px;
+    }
+    .close-icon-placeholder-texnika {
+        font-size: 32px;
+    }
+    .burger-menu-texnika li {
+        font-size: 22px;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+    }
+
+    /* Заголовки секций */
+    .section-divider-people h1,
+    .section-divider-animal h1,
+    .section-divider-planet h1,
+    .section-star h1,
+    .section-divider-satellite h1,
+    .section-divider-texnika h1 {
+        font-size: 28px;
+    }
+    .section-divider-people,
+    .section-divider-animal,
+    .section-divider-planet,
+    .section-star,
+    .section-divider-satellite,
+    .section-divider-texnika {
+        height: 70px;
+        margin-top: 40px;
+    }
+
+    /* Сетка карточек — 2 колонки на телефонах как в макете */
+    .cards-container-people,
+    .cards-container-animal,
+    .cards-container-planet,
+    .stars-container,
+    .cards-container-satellite,
+    .cards-container-texnika {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+        padding: 0 15px 30px 15px;
+    }
+
+    /* Карточки */
+    .card-people,
+    .card-animal,
+    .card-planet,
+    .star,
+    .card-satellite,
+    .card-texnika {
+        max-width: 100%;
+        aspect-ratio: 1 / 1;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2), 0 0 0 3px #162e4d;
+    }
+
+    /* Модальное окно — компактное, как десктоп */
+    .modal-people,
+    .modal-animal,
+    .modal-planet,
+    .modal-star,
+    .modal-satellite,
+    .modal-texnika {
+        background-color: rgba(172, 183, 201, 0.85);
+    }
+
+    .modal-content-people,
+    .modal-content-animal,
+    .modal-content-planet,
+    .modal-content-star,
+    .modal-content-satellite,
+    .modal-content-texnika {
+        width: 95%;
+        max-width: 500px;
+        height: auto;
+        min-height: auto;
+        padding: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        border-radius: 20px;
+        box-shadow: 0 0 30px 0 #162e4d;
+    }
+
+    /* Картинка в модалке — сверху, как в десктопе, но меньше */
+    .modal-content-people .people-image,
+    .modal-content-animal .animal-image,
+    .modal-content-planet .planet-image,
+    .modal-content-star .star-image,
+    .modal-content-satellite .satellite-image,
+    .modal-content-texnika .texnika-image {
+        position: relative;
+        left: auto;
+        top: auto;
+        margin: 0 auto 15px auto;
+        max-width: 180px;
+        max-height: 160px;
+        display: block;
+    }
+
+    /* Информация — под картинкой, как в десктопе */
+    .modal-content-people .people-info,
+    .modal-content-animal .animal-info,
+    .modal-content-planet .planet-info,
+    .modal-content-star .star-info,
+    .modal-content-satellite .satellite-info,
+    .modal-content-texnika .texnika-info {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    .modal-content-people .people-info h2,
+    .modal-content-animal .animal-info h2,
+    .modal-content-planet .planet-info h2,
+    .modal-content-star .star-info h2,
+    .modal-content-satellite .satellite-info h2,
+    .modal-content-texnika .texnika-info h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .modal-content-people .people-info h3,
+    .modal-content-animal .animal-info h3,
+    .modal-content-planet .planet-info h3,
+    .modal-content-star .star-info h3,
+    .modal-content-satellite .satellite-info h3,
+    .modal-content-texnika .texnika-info h3 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    /* Текстовая секция */
+    .modal-content-people .text-section-people,
+    .modal-content-animal .text-section-animal,
+    .modal-content-planet .text-section-planet,
+    .modal-content-star .text-section-star,
+    .modal-content-satellite .text-section-satellite,
+    .modal-content-texnika .text-section-texnika {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        padding: 12px;
+        margin-top: 10px;
+        font-size: 13px;
+        overflow-y: auto;
+        border-radius: 12px;
+    }
+
+    .modal-content-people .people-info h2,
+    .modal-content-animal .animal-info h2,
+    .modal-content-planet .planet-info h2,
+    .modal-content-star .star-info h2,
+    .modal-content-satellite .satellite-info h2,
+    .modal-content-texnika .texnika-info h2 {
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .modal-content-people .people-info h3,
+    .modal-content-animal .animal-info h3,
+    .modal-content-planet .planet-info h3,
+    .modal-content-star .star-info h3,
+    .modal-content-satellite .satellite-info h3,
+    .modal-content-texnika .texnika-info h3 {
+        font-size: 16px;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+
+    /* Список характеристик — маленький */
+    .characteristics-list-people,
+    .characteristics-list-animal,
+    .characteristics-list-planet,
+    .characteristics-list-star,
+    .characteristics-list-satellite,
+    .characteristics-list-texnika {
+        font-size: 14px !important;
+        padding-left: 20px;
+        margin: 5px 0 10px 0;
+        line-height: 1.4;
+    }
+
+
+    /* Кнопка закрытия */
+    .close-button-people,
+    .close-button-animal,
+    .close-button-planet,
+    .close-button-star,
+    .close-button-satellite,
+    .close-button-texnika {
+        font-size: 28px;
+        top: 10px;
+        right: 15px;
+    }
+
+     /* Стили для полосы прокрутки */
+    .modal-content-people .text-section-people::-webkit-scrollbar,
+    .modal-content-animal .text-section-animal::-webkit-scrollbar,
+    .modal-content-planet .text-section-planet::-webkit-scrollbar,
+    .modal-content-star .text-section-star::-webkit-scrollbar,
+    .modal-content-satellite .text-section-satellite::-webkit-scrollbar,
+    .modal-content-texnika .text-section-texnika::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .modal-content-people .text-section-people::-webkit-scrollbar-track,
+    .modal-content-animal .text-section-animal::-webkit-scrollbar-track,
+    .modal-content-planet .text-section-planet::-webkit-scrollbar-track,
+    .modal-content-star .text-section-star::-webkit-scrollbar-track,
+    .modal-content-satellite .text-section-satellite::-webkit-scrollbar-track,
+    .modal-content-texnika .text-section-texnika::-webkit-scrollbar-track {
+        background: #d1d5db;
+        border-radius: 10px;
+    }
+
+    .modal-content-people .text-section-people::-webkit-scrollbar-thumb,
+    .modal-content-animal .text-section-animal::-webkit-scrollbar-thumb,
+    .modal-content-planet .text-section-planet::-webkit-scrollbar-thumb,
+    .modal-content-star .text-section-star::-webkit-scrollbar-thumb,
+    .modal-content-satellite .text-section-satellite::-webkit-scrollbar-thumb,
+    .modal-content-texnika .text-section-texnika::-webkit-scrollbar-thumb {
+        background: #162e4d;
+        border-radius: 10px;
+    }
+
+    /* ===== ПОДВАЛ — как на макете ===== */
+    .footer {
+        min-height: auto;
+        padding: 25px 0;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .footer-logo {
+        margin: 0 auto 10px auto;
+        width: 80px;
+        height: 50px;
+    }
+
+    .footer-text-container {
+        font-size: 12px;
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto 20px auto;
+    }
+
+    .footer-nav-list {
+        font-size: 14px;
+        margin: 0 0 20px 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-nav-list li {
+        margin-bottom: 0;
+    }
+
+    .footer-social-icons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        margin: 0;
+    }
+
+    .social-icon {
+        width: 32px;
+        height: 32px;
+        margin-top: 0;
+    }
+
+    .social-icon img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+
+
+
+
+
+/* ========== МАЛЕНЬКИЕ ТЕЛЕФОНЫ (до 480px) ========== */
+@media (max-width: 480px) {
+    .cards-container-people,
+    .cards-container-animal,
+    .cards-container-planet,
+    .stars-container,
+    .cards-container-satellite,
+    .cards-container-texnika {
+        gap: 10px;
+        padding: 0 10px 20px 10px;
+    }
+
+    .modal-content-people,
+    .modal-content-animal,
+    .modal-content-planet,
+    .modal-content-star,
+    .modal-content-satellite,
+    .modal-content-texnika {
+        width: 98%;
+        max-width: 380px;
+        padding: 15px;
+    }
+
+    .modal-content-people .text-section-people,
+    .modal-content-animal .text-section-animal,
+    .modal-content-planet .text-section-planet,
+    .modal-content-star .text-section-star,
+    .modal-content-satellite .text-section-satellite,
+    .modal-content-texnika .text-section-texnika {
+        max-height: 180px;
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .characteristics-list-people,
+    .characteristics-list-animal,
+    .characteristics-list-planet,
+    .characteristics-list-star,
+    .characteristics-list-satellite,
+    .characteristics-list-texnika {
+        font-size: 13px !important;
+    }
+}
+
+/* ========== ОЧЕНЬ МАЛЕНЬКИЕ (до 380px) ========== */
+@media (max-width: 380px) {
+    .section-divider-people h1,
+    .section-divider-animal h1,
+    .section-divider-planet h1,
+    .section-star h1,
+    .section-divider-satellite h1,
+    .section-divider-texnika h1 {
+        font-size: 24px;
+    }
+
+    .modal-content-people .text-section-people,
+    .modal-content-animal .text-section-animal,
+    .modal-content-planet .text-section-planet,
+    .modal-content-star .text-section-star,
+    .modal-content-satellite .text-section-satellite,
+    .modal-content-texnika .text-section-texnika {
+        max-height: 160px;
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .characteristics-list-people,
+    .characteristics-list-animal,
+    .characteristics-list-planet,
+    .characteristics-list-star,
+    .characteristics-list-satellite,
+    .characteristics-list-texnika {
+        font-size: 12px !important;
+    }
+}
+    </style>
+
+<header class="header-texnika">
+        <div class="header-max-texnika">
+           <div class="header-background-texnika">
+               <div class="gif-placeholder-texnika">
+                <img src="img/starry_sky_original_style.gif" alt="Фон шапки" class="header-bg">
+               </div>
+           </div>
+
+           <div class="header-logo-container-texnika">
+               <img src="img/LOGO глав.png" alt="Логотип" >
+           </div>
+
+           <div class="header-icons-texnika">
+                   <div class="home-placeholder-texnika">
+                       <a href="glav.html"><img src="img/ДОМИК.png" alt="home"></a>
+                   </div>
+
+               <div id="burger-icon-texnika">
+                   <div class="burger-placeholder-texnika">
+                       <img src="img/БУРГЕРНОЕ МЕНЮ.png" alt="burger">
+                   </div>
+               </div>
+           </div>
+       </div>
+    </header>
+
+    <div class="burger-menu-texnika" id="burger-menu-texnika">
+        <div class="close-icon-container-texnika">
+            <div class="close-icon-placeholder-texnika">
+                <a href="#glav.html">✕</a>
+            </div>
+        </div>
+        <ul>
+            <li><a href="kosmotel.html">Космические тела</a></li>
+            <li><a href="kosmonavt.html">Покорители космоса</a></li>
+            <li><a href="tehnika.html">Космическая техника</a></li>
+        </ul>
+    </div>
+
+    
+    <!--  СЕКЦИЯ 1: ЛЮДИ  -->
+    <div class="section-divider-people">
+        <h1>ЛЮДИ</h1>
+    </div>
+
+    <div class="cards-container-people">
+        <div class="card-people" onclick="openModalPeople('img/Гагарин.png', 'Юрий Гагарин', 'Основные характеристики:', ['Полное имя: Юрий Алексеевич Гагарин', 'Дата полёта: 12 апреля 1961 года', 'Корабль: «Восток-1»', 'Длительность полёта: 108 минут', 'Количество витков вокруг Земли: 1', 'Максимальная высота орбиты: 327 км'], 'первый человек в истории, совершивший полёт в космическое пространство. 12 апреля 1961 года на корабле «Восток-1» он стартовал с космодрома Байконур, облетел Землю за 108 минут на высоте до 327 км и благополучно приземлился в Саратовской области. Полёт прошёл в автоматическом режиме, но Гагарин был готов взять управление на себя в случае нештатной ситуации. Его улыбка, простота и мужество сделали его всемирным символом эпохи покорения космоса. После полёта он продолжал служить в отряде космонавтов, готовился к новым миссиям и активно участвовал в общественной деятельности.', 'во время подготовки к полёту инженеры предусмотрели систему аварийного катапультирования: на высоте около 7 км Гагарин должен был покинуть спускаемый аппарат и приземлиться на парашюте отдельно от капсулы. Этот факт скрывали от международной общественности несколько лет, так как по правилам Международной авиационной федерации (FAI) пилот должен приземляться вместе с летательным аппаратом для фиксации рекорда. Только в 1971 году была раскрыта полная картина посадки, но к тому времени рекорд Гагарина уже никто не оспаривал.')">
+            <img src="img/Гагарин.png" alt="Гагарин">
+        </div>
+        <div class="card-people" onclick="openModalPeople('img/Леонов.png', 'Алексей Леонов', 'Основные характеристики:', ['Полное имя: Алексей Архипович Леонов', 'Дата полёта: 18 марта 1965 года', 'Корабль: «Восход-2»', 'Длительность полёта: 1 сутки 2 часа 2 минуты','Время в открытом космосе: 12 минут 9 секунд', 'Расстояние от корабля при выходе: до 5 метров',], 'первый человек, вышедший в открытый космос. 18 марта 1965 года в рамках миссии «Восход-2» он покинул корабль и провёл вне его 12 минут 9 секунд, выполнив задачи по фотосъёмке и проверке работы скафандра «Беркут». Леонов также был командиром советского экипажа в исторической миссии «Союз-19» (1975) в рамках программы «Союз - Аполлон» - первой международной стыковки в космосе. Он был не только выдающимся космонавтом, но и талантливым художником: первым начал рисовать космос «с натуры», из иллюминатора.', 'во время первого в истории выхода в открытый космос скафандр Леонова «Беркут» неожиданно раздулся в вакууме, увеличившись в объёме. Космонавт физически не мог протиснуться в люк шлюза головой вперёд, как планировалось. Положение было критическим: кислород заканчивался, пульс достиг 140 ударов в минуту. Леонов принял рискованное решение - стравить часть кислорода из скафандра, снизив давление до опасного уровня. Только так ему удалось развернуться и войти в шлюз ногами вперёд. После возвращения температура его тела поднялась до 38 °C, а скафандр внутри был полностью мокрым от пота.')">
+            <img src="img/Леонов.png" alt="Леонов">
+        </div>
+        <div class="card-people" onclick="openModalPeople('img/Терешкова.png', 'Валентина Терешкова', 'Основные характеристики:', ['Полное имя: Валентина Владимировна Терешкова', 'Дата полёта: 16-19 июня 1963 года', 'Корабль: «Восток-6»', 'Длительность полёта: 2 суток 22 часа 51 минута', 'Количество витков вокруг Земли: 48', 'Звание на момент полёта: младший лейтенант'], 'первая женщина-космонавт в мире. 16 июня 1963 года она стартовала на корабле «Восток-6» и провела в космосе 2 суток 22 часа 50 минут, совершив 48 витков вокруг Земли. Во время полёта она вела бортовой журнал, проводила наблюдения и поддерживала радиосвязь с Землёй и с кораблём «Восток-5», на котором летал Валерий Быковский. Терешкова прошла жёсткий отбор из сотен кандидаток благодаря отличному здоровью, парашютному опыту (126 прыжков) и идеальной с идеологической точки зрения биографии - дочь тракториста, ткачиха, комсомолка.', 'Во время полёта Терешкова столкнулась с серьёзной технической проблемой: система автоматической ориентации корабля дала сбой, и вместо того чтобы включить тормозной двигатель для спуска, она могла дать команду на подъём орбиты, что привело бы к потере корабля. Инженеры на Земле оперативно разработали новую схему расчётов, передали их Терешковой, и она вручную ввела корректирующие данные. Только благодаря её хладнокровию и точности миссия завершилась успешно. Этот эпизод держали в секрете более 20 лет.')">
+            <img src="img/Терешкова.png" alt="Терешкова">
+        </div>
+        <div class="card-people" onclick="openModalPeople('img/Савицкая.png', 'Светлана Савицкая', 'Основные характеристики:', ['Полное имя: Светлана Евгеньевна Савицкая', 'Первый полёт: 19-27 августа 1982 года', 'Второй полёт: 17-25 июля 1984 года', 'Корабли: «Союз Т-7», «Союз Т-12»', 'Станция: «Салют-7»', 'Суммарная длительность полётов: 19 дней 17 часов 7 минут'], 'вторая женщина в космосе и первая женщина, вышедшая в открытый космос. Она совершила два полёта: в 1982 году на «Союзе Т-7» к станции «Салют-7» и в 1984 году на «Союзе Т-12», когда вместе с Владимиром Джанибековым выполнила внекорабельную работу. Во время выхода 25 июля 1984 года она провела вне станции 3 часа 35 минут, вручную заменила неисправный научный блок и опробовала новый инструмент для резки и сварки металлов в вакууме. До космоса Савицкая была лётчиком-испытателем первого класса и установила несколько мировых авиационных рекордов.', 'Во время выхода в открытый космос Савицкая использовала уникальный многофункциональный инструмент УИМК-70, который позволял резать, сваривать и паять металлы прямо в вакууме. Она не только успешно выполнила все операции, но и продемонстрировала, что женщина может работать с тяжёлым оборудованием в условиях невесомости не хуже мужчины. После возвращения на Землю инструмент был передан в музей, а Савицкая получила звание Героя Советского Союза во второй раз - она стала первой в мире женщиной, удостоенной этой награды дважды.')">
+            <img src="img/Савицкая.png" alt="Савицкая">
+        </div>
+        <div class="card-people" onclick="openModalPeople('img/Крикалев.png', 'Сергей Крикалёв', 'Основные характеристики:', ['Полное имя: Сергей Константинович Крикалёв', 'Первый полёт: 1988 год', 'Количество полётов: 6', 'Суммарный налёт: 803 дня 9 часов 41 минута', 'Количество выходов в космос: 8', 'Общая длительность выходов: 41 час 26 минут'], 'один из самых опытных космонавтов в истории. За шесть полётов (1988-2005) он провёл на орбите 803 суток 9 часов 39 минут, работая на станциях «Мир» и Международной космической станции. Он участвовал в развёртывании первых модулей МКС, выполнял сложные ремонтные работы в открытом космосе и был бортинженером в международных экипажах. Крикалёв известен своим профессионализмом, выдержкой в нештатных ситуациях и способностью находить нестандартные решения. После завершения лётной карьеры он занимался подготовкой новых поколений космонавтов.', 'в 1991-1992 годах Крикалёв находился на борту станции «Мир» во время распада Советского Союза. Его миссия должна была завершиться осенью 1991 года, но из-за финансовых и политических потрясений смена экипажа задержалась. Крикалёв провёл на орбите более 300 суток в условиях, когда его страна перестала существовать, а финансирование космической программы было под вопросом. Он вернулся на Землю 25 марта 1992 года уже гражданином Российской Федерации. Журналисты окрестили его «последним гражданином СССР», а сам космонавт позже шутил: «Я улетал из одной страны, а приземлился в другой».')">
+            <img src="img/Крикалев.png" alt="Крикалев">
+        </div>
+        <div class="card-people" onclick="openModalPeople('img/Соловьев.png', 'Анатолий Соловьёв', 'Основные характеристики:', ['Полное имя: Анатолий Яковлевич Соловьёв', 'Первый полёт: 1988 год', 'Количество полётов: 5', 'Суммарный налёт: 651 день', 'Количество выходов в космос: 16', 'Общая длительность выходов: 82 часа 22 минуты'], 'абсолютный рекордсмен по количеству и продолжительности выходов в открытый космос среди российских космонавтов. Он совершил 16 выходов суммарной продолжительностью 78 часов 46 минут, работая на станциях «Салют-7», «Мир» и МКС. Соловьёв специализировался на сложнейших операциях по монтажу, ремонту и замене оборудования вне корабля. Его опыт и методики подготовки к внекорабельной деятельности стали эталоном для последующих поколений космонавтов. Он также известен как мастер парашютного спорта и автор множества технических рационализаторских предложений.', 'во время одного из выходов на станции «Мир» в 1997 году Соловьёв столкнулся с нештатной ситуацией: заклинил механизм разворота солнечной батареи. Используя только штатный ключ, страховочный трос и собственную силу, он вручную открутил заклинивший болт, потратив на операцию около 40 минут. При этом температура внутри скафандра приблизилась к критической, а запас кислорода сократился. После успешного завершения работы Соловьёв записал в бортовой журнал лаконичную фразу: «Болт побеждён. Солнце снова светит». Эта запись позже стала крылатой среди космонавтов.')">
+            <img src="img/Соловьев.png" alt="Соловьев">
+        </div>
+    </div>
+
+    <!--  СЕКЦИЯ 2: ЖИВОТНЫЕ  -->
+    <div class="section-divider-animal">
+        <h1>ЖИВОТНЫЕ</h1>
+    </div>
+
+    <div class="cards-container-animal">
+        <div class="card-animal" onclick="openModalAnimal('img/Лайка.png', 'Лайка', 'Основные характеристики:', ['Порода: беспородная дворняга', 'Дата полёта: 3 ноября 1957 года', 'Корабль: «Спутник-2»', 'Длительность жизни на орбите: около 5–7 часов', 'Количество витков: 2', 'Вес: около 5 кг'], 'первая собака, вышедшая на орбиту Земли, и первое живое существо, облетевшее нашу планету. 3 ноября 1957 года она стартовала на советском корабле «Спутник-2». Лайка была беспородной дворнягой, отобранной из приюта Москвы: учёные считали, что бездомные животные лучше переносят стресс, холод и голод. Перед полётом она прошла интенсивную подготовку: её приучали к тесной кабине, вибрациям, перегрузкам на центрифуге и специальному питанию в виде гелеобразной пищи. В кабине были установлены датчики, передававшие на Землю данные о пульсе, дыхании и температуре тела. Полёт Лайки доказал, что живой организм может выдержать перегрузки при старте и кратковременно существовать в невесомости - это открыло дорогу полётам человека.', 'Долгое время официально сообщалось, что Лайка прожила на орбите около недели и была гуманно усыплена по команде с Земли. Однако в 2002 году были рассекречены данные: на самом деле собака погибла через 5–7 часов после старта от перегрева и стресса. Система терморегуляции корабля не сработала, температура в кабине поднялась до 40 °C. Несмотря на трагический исход, миссия Лайки стала бесценным источником данных для разработки систем жизнеобеспечения, которые позже спасли жизнь Гагарину. В 2008 году в Москве на Петровско-Разумовской аллее был открыт памятник Лайке - собака стоит на вершине ракеты, устремлённой в небо.')">
+            <img src="img/Лайка.png" alt="Лайка">
+        </div>
+        <div class="card-animal" onclick="openModalAnimal('img/Белка и Стрелка.png', 'Белка и Стрелка', 'Основные характеристики:', ['Порода: беспородные дворняги', 'Дата полёта: 19-20 августа 1960 года', 'Корабль: «Спутник-5»', 'Длительность полёта: 1 сутки 2 часа', 'Количество витков вокруг Земли: 17', 'Попутчики: 2 крысы, 40 мышей, растения, мухи'], 'первые живые существа, совершившие орбитальный полёт и благополучно вернувшиеся на Землю. 19 августа 1960 года они стартовали на корабле «Спутник-5» («Восток-1К») вместе с 40 мышами, 2 крысами, кроликами, мухами, растениями и грибами. Полёт длился 25 часов 11 минут, за это время корабль совершил 17 витков вокруг Земли. Собаки находились в специальном контейнере с системой жизнеобеспечения, видеокамеры транслировали их поведение на Землю. После приземления в районе города Бузулук Белка и Стрелка были в отличной форме: активные, с хорошим аппетитом. Их успешное возвращение стало финальным доказательством безопасности пилотируемых полётов - менее чем через год в космос отправился Гагарин.', 'Стрелка позже стала «звездой» дипломатии: в 1961 году Никита Хрущёв подарил её щенка по кличке Пушинка дочери президента США Джона Кеннеди - Каролин. Щенок родился уже после космического полёта матери. Пушинка и президентский пёс Чарли дали потомство, а Кеннеди в шутку называл щенков «папниками» (от слов «pup» и «sputnik»). Сегодня потомки Стрелки живут в разных странах, а сама она покоится в чучеле в музее космонавтики в Москве. Белка же дожила до старости в питомнике Института медико-биологических проблем, став матерью многочисленного потомства.')">
+            <img src="img/Белка и Стрелка.png" alt="Белка и Стрелка">
+        </div>
+        <div class="card-animal" onclick="openModalAnimal('img/Хэм(бибизьяна).png', 'Хэм', 'Основные характеристики:', ['Вид: шимпанзе', 'Дата полёта: 31 января 1961 года', 'Корабль: Mercury-Redstone 2', 'Длительность полёта: 16 минут 39 секунд', 'Максимальная высота: 253 км', 'Статус: первый гоминид в космосе'], 'первый шимпанзе, побывавший в космосе и вернувшийся живым. 31 января 1961 года он совершил суборбитальный полёт на американском корабле «Меркурий-2» в рамках программы НАСА. Перед миссией Хэм прошёл полуторагодовую подготовку: его учили выполнять простые задачи (нажимать на рычаги в ответ на световые сигналы) за вознаграждение в виде банановых гранул и наказание в виде лёгкого удара током. Во время полёта, который длился 16 минут 39 секунд (из них около 6 минут - в невесомости), Хэм успешно выполнил 45 из 50 заданий, доказав, что в условиях перегрузок и невесомости примат способен сохранять когнитивные функции и работать с оборудованием. Его полёт стал последним испытанием перед отправкой в космос первого американского астронавта - Алана Шепарда.', 'Во время полёта система управления кораблём дала сбой, и капсула с Хэмом улетела выше и дальше запланированного: вместо расчётных 185 км она поднялась на 251 км, а приземлилась не в океане у Багамских островов, а в реке в Северной Каролине, на 670 км дальше цели. Спасатели нашли капсулу уже погружающейся в воду, но Хэм был в полном порядке: он спокойно ел яблоко, пока его вытаскивали. После миссии шимпанзе не вернулся в лабораторию, а отправился в Национальный зоопарк в Вашингтоне, где прожил ещё 22 года. Интересно, что имя «Хэм» - это аббревиатура: Holloman Aerospace Medical Center, но в НАСА специально выбрали короткое звучное имя, чтобы оно легко произносилось в радиоэфире.')">
+            <img src="img/Хэм(бибизьяна).png" alt="Хэм">
+        </div>
+        <div class="card-animal" onclick="openModalAnimal('img/Филисетт(киса).png', 'Фелисетт', 'Основные характеристики:', ['Вид: кошка, чёрно-белая', 'Дата полёта: 18 октября 1963 года', 'Корабль: Véronique AGI 47 (французская ракета)', 'Длительность полёта: 15 минут (из них 5 минут в невесомости)', 'Максимальная высота: 157 км', 'Статус: единственная кошка, побывавшая в космосе'], 'первая и единственная кошка, побывавшая в космосе и вернувшаяся живой. 18 октября 1963 года она стартовала на французской ракете «Вероник» с космодрома в Алжире (тогда - французская территория). Полёт был суборбитальным: ракета поднялась на высоту 157 км, провела около 5 минут в невесомости, после чего капсула с кошкой отделилась и приземлилась на парашюте в пустыне Сахара. Фелисетт была оснащена имплантированными электродами, которые передавали на Землю данные о работе её мозга, сердца и дыхания. До полёта она прошла жёсткий отбор из 14 кошек: учёные тренировали животных переносить вибрацию, шум и невесомость на центрифуге. Успешное возвращение Фелисетт доказало, что млекопитающие с более сложной нервной системой, чем грызуны, могут переносить космический полёт без необратимых последствий.', 'Фелисетт - это не имя, а код: «Félicette» образовано от французского слова «félin» (кошачий) и обозначения миссии «C» (третья кошка в программе, но первая, запущенная в космос). Перед основным полётом Франция запустила ещё двух кошек - «Астрокот» и «Звёздочка», но их капсулы не были оснащены системой возвращения, и животные погибли. После полёта Фелисетт была подвергнута эвтаназии через два месяца для детального изучения её мозга и вестибулярного аппарата - это вызвало споры о этике космических экспериментов. В 2017 году студенты Университета Стратклайда собрали деньги через краудфандинг, чтобы установить бронзовую статую Фелисетт у здания университета - первый в мире памятник кошке-космонавту. На постаменте выбита фраза: «Она не мяукала. Она летела».')">
+            <img src="img/Филисетт(киса).png" alt="Филисетт">
+        </div>
+    </div>
+
+    
+
+    <!--  МОДАЛЬНЫЕ ОКНА  -->
+    <!-- Модальное окно для людей -->
+    <div id="modalPeople" class="modal-people">
+        <div class="modal-content-people">
+            <button class="close-button-people" onclick="closeModal('modalPeople')">✕</button>
+            <img src="" alt="Изображение человека" class="people-image">
+            <div class="people-info">
+                <h2 id="peopleLabel"></h2>
+                <h3 id="peopleSubheader"></h3>
+                <ul id="peopleCharacteristics" class="characteristics-list-people"></ul>
+            </div>
+            <div class="text-section-people" id="peopleText"></div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для животных -->
+    <div id="modalAnimal" class="modal-animal">
+        <div class="modal-content-animal">
+            <button class="close-button-animal" onclick="closeModal('modalAnimal')">✕</button>
+            <img src="" alt="Изображение животного" class="animal-image">
+            <div class="animal-info">
+                <h2 id="animalLabel"></h2>
+                <h3 id="animalSubheader"></h3>
+                <ul id="animalCharacteristics" class="characteristics-list-animal"></ul>
+            </div>
+            <div class="text-section-animal" id="animalText"></div>
+        </div>
+    </div>
+
+    <style>
+        /* Дополнительные стили для текста */
+        .text-section-people, .text-section-animal {
+            white-space: pre-wrap;
+            line-height: 1.6;
+            font-family: 'Segoe UI', 'Inter', 'Roboto', system-ui, sans-serif;
+        }
+    </style>
+    <footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-logo"><img src="img/LOGO глав.png" alt="logo"></div>
+        <div class="footer-text-container">
+            - это небольшое, но амбициозное комьюнити начинающих верстальщиков, регулярно практикующихся в адаптивной вёрстке.
+        </div>
+        <ul class="footer-nav-list">
+            <li><a href="kosmotel.html">Космические тела</a></li>
+            <li><a href="kosmonavt.html">Покорители космоса</a></li>
+            <li><a href="tehnika.html">Космическая техника</a></li>
+        </ul>
+        <ul class="footer-social-icons">
+            <li><a href="https://vk.com" class="social-icon"><img src="img/LOGO VK.png" alt="vk"></a></li>
+            <li><a href="https://ok.ru" class="social-icon"><img src="img/LOGO OK.png" alt="ok"></a></li>
+            <li><a href="https://mail.ru" class="social-icon"><img src="img/LOGO EMail.png" alt="EMail"></a></li>
+        </ul>
+    </div>
+</footer>
+
+    <script>
+        const burgerIcon = document.getElementById('burger-icon-texnika');
+        const burgerMenu = document.getElementById('burger-menu-texnika');
+        const closeIcon = document.querySelector('.close-icon-container-texnika');
+
+        function openBurgerMenu() {
+            burgerMenu.classList.add('open-texnika');
+        }
+
+        function closeBurgerMenu() {
+            burgerMenu.classList.remove('open-texnika');
+        }
+
+        if (burgerIcon) burgerIcon.addEventListener('click', openBurgerMenu);
+        if (closeIcon) closeIcon.addEventListener('click', closeBurgerMenu);
+
+        // Закрытие бургер-меню при прокрутке страницы
+    window.addEventListener('scroll', function() {
+        const burgerMenu = document.getElementById('burger-menu-texnika');
+        if (burgerMenu && burgerMenu.classList.contains('open-texnika')) {
+            burgerMenu.classList.remove('open-texnika');
+        }
+    });
+
+        // Функция для открытия модального окна людей
+        function openModalPeople(imageUrl, name, subheader, characteristics, description, funFact) {
+            const modal = document.getElementById("modalPeople");
+            document.querySelector("#modalPeople .people-image").src = imageUrl;
+            document.getElementById("peopleLabel").textContent = name;
+            document.getElementById("peopleSubheader").textContent = subheader;
+            
+            const list = document.getElementById("peopleCharacteristics");
+            list.innerHTML = "";
+            characteristics.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                list.appendChild(li);
+            });
+            
+            let fullText = "";
+            if (description && description.trim() !== "") {
+                fullText = "<strong>Описание:</strong> " + description;
+            }
+            if (funFact && funFact.trim() !== "") {
+                fullText = fullText + "\n\n<strong>Интересный факт:</strong> " + funFact;
+            }
+            document.getElementById("peopleText").innerHTML = fullText;
+            modal.style.display = "block";
+
+            // ✅ СБРОС ПРОКРУТКИ ДЛЯ ЛЮДЕЙ
+    const textSection = document.querySelector("#modalPeople .text-section-people");
+    if (textSection) textSection.scrollTop = 0;
+    
+    modal.style.display = "block";
+        }
+
+        // Функция для открытия модального окна животных
+        function openModalAnimal(imageUrl, name, subheader, characteristics, description, funFact) {
+            const modal = document.getElementById("modalAnimal");
+            document.querySelector("#modalAnimal .animal-image").src = imageUrl;
+            document.getElementById("animalLabel").textContent = name;
+            document.getElementById("animalSubheader").textContent = subheader;
+            
+            const list = document.getElementById("animalCharacteristics");
+            list.innerHTML = "";
+            characteristics.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                list.appendChild(li);
+            });
+            
+            let fullText = "";
+            if (description && description.trim() !== "") {
+                fullText = "<strong>Описание:</strong> " + description;
+            }
+            if (funFact && funFact.trim() !== "") {
+                fullText = fullText + "\n\n<strong>Интересный факт:</strong> " + funFact;
+            }
+            document.getElementById("animalText").innerHTML = fullText;
+            modal.style.display = "block";
+
+            // ✅ СБРОС ПРОКРУТКИ ДЛЯ ЖИВОТНЫХ
+    const textSection = document.querySelector("#modalAnimal .text-section-animal");
+    if (textSection) textSection.scrollTop = 0;
+    
+    modal.style.display = "block";
+        }
+
+        // Закрытие модального окна
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Закрытие при клике на фон
+        window.onclick = function(event) {
+            const modals = ['modalPeople', 'modalAnimal'];
+            modals.forEach(id => {
+                const modal = document.getElementById(id);
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
